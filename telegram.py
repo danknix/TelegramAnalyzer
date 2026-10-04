@@ -23,9 +23,9 @@ async def main():
         if dialog.is_group or dialog.is_channel or is_bot:
             continue
         print("Чат:", dialog.name)
-        messages = await client.get_messages(dialog.id, offset_date=offsetw)
+        messages = await client.get_messages(dialog.id, offset_date=offsetw, reverse=True)
         msg_week += len(messages)
-        messages = await client.get_messages(dialog.id, offset_date=offsetm)
+        messages = await client.get_messages(dialog.id, offset_date=offsetm, reverse=True)
         msg_month += len(messages)
         most_active_chat.append((len(messages), dialog.name))
         for message in messages:
