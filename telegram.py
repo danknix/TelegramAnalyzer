@@ -1,9 +1,8 @@
+from config import api_id, api_hash
 from telethon import TelegramClient
 from telethon.tl.types import User, Chat, Channel
 from datetime import datetime, timedelta, timezone
-
-api_id = 0 #СЕКРЕТ
-api_hash = ""  
+ 
 
 client = TelegramClient('1', api_id, api_hash)
 
